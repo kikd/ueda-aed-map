@@ -8,10 +8,10 @@
 
 <style scoped>
 .navbar {
-    position: sticky;
-    top:0;
-    left:0;
+
     background-color: #31a9ee; 
     color: #080808;
+    font-size:24px;
+    font-weight:600;
 }
 </style>

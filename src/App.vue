@@ -5,12 +5,19 @@ import Map from './components/Map.vue'
 
 <template>
   <Header></Header>
-  <div>
+  <div class="app">
     <Map></Map>
   </div>
 </template>
 
 <style scoped>
+.app {
+  display:flex; 
+  place-items:center;
+  padding: 1rem;
+  text-align: center;
+
+}
 .logo {
   height: 6em;
   padding: 1.5em;

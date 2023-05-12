@@ -1,5 +1,5 @@
 <template>
-  <div style="height:600px; width:800px">
+  <div class="map">
     <l-map ref="map" v-model:zoom="zoom" :center="[36.402416592945016, 138.2474845647812]">
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -44,4 +44,9 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style scoped>
+.map{
+  height:90vh;
+  width:100vw;
+}
+</style>
