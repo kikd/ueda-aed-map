@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue3-geolocation": "^1.0.0"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.3",

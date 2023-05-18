@@ -19,13 +19,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LControlLayers, LMarker, LTooltip } from "@vue-leaflet/vue-leaflet";
 import AEDData from '../assets/aed_ueda.json'
 
 export default defineComponent({
-  setup(){},
+  setup(){
+    onMounted(() =>{
+    })
+    const zoom = ref(16);
+    const aed_data = AEDData;
+    return {
+      zoom: zoom,
+      AEDData: aed_data
+    }
+  },
   components: {
     LMap,
     LTileLayer,
@@ -33,14 +42,6 @@ export default defineComponent({
     LMarker,
     LTooltip,
   },
-  data() {
-    return {
-      zoom: 16,
-      AEDData:AEDData,
-    };
-  },
-  methods: {},
-  mounted() {}
 });
 </script>
 
