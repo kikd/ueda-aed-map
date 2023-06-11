@@ -1,6 +1,6 @@
 <template>
   <div class="map">
-    <l-map ref="map" v-model:zoom="zoom" :use-global-leaflet="false" :center="center">
+    <l-map ref="map" v-model:zoom="zoom" :use-global-leaflet="false" :center="[center.lat, center.lng]">
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
@@ -34,7 +34,6 @@ export default defineComponent({
   setup() {
     const zoom = ref(16);
     const aed_data = AEDData;
-    // const center = ref([36.402416592945016, 138.2474845647812]);
 
     const { kordinat } = useGeolocation();
     const posisiUser = computed(() => ({
@@ -42,7 +41,7 @@ export default defineComponent({
       lng: kordinat.value.longitude,
     }));
     const center = computed(() => {
-      return [posisiUser.value.lat, posisiUser.value.lng];
+      return {lat:posisiUser.value.lat, lng:posisiUser.value.lng};
     })
       
     console.log({ p: posisiUser.value }); // ❌ posisiUser not yet updated in useGeolocation()
